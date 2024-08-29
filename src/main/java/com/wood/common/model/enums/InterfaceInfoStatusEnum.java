@@ -1,4 +1,4 @@
-package com.woodapi.model.enums;
+package com.wood.common.model.enums;
 
 import org.apache.commons.lang3.ObjectUtils;
 
@@ -7,21 +7,19 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * 用户角色枚举
- *
+ * 接口信息状态枚举
  *
  */
-public enum UserRoleEnum {
+public enum InterfaceInfoStatusEnum {
 
-    USER("用户", "user"),
-    ADMIN("管理员", "admin"),
-    BAN("被封号", "ban");
+    OFFLINE("下线中", 0),
+    ONLINE("上线中", 1);
 
     private final String text;
 
-    private final String value;
+    private final Integer value;
 
-    UserRoleEnum(String text, String value) {
+    InterfaceInfoStatusEnum(String text, Integer value) {
         this.text = text;
         this.value = value;
     }
@@ -31,7 +29,7 @@ public enum UserRoleEnum {
      *
      * @return
      */
-    public static List<String> getValues() {
+    public static List<Integer> getValues() {
         return Arrays.stream(values()).map(item -> item.value).collect(Collectors.toList());
     }
 
@@ -41,11 +39,11 @@ public enum UserRoleEnum {
      * @param value
      * @return
      */
-    public static UserRoleEnum getEnumByValue(String value) {
+    public static InterfaceInfoStatusEnum getEnumByValue(String value) {
         if (ObjectUtils.isEmpty(value)) {
             return null;
         }
-        for (UserRoleEnum anEnum : UserRoleEnum.values()) {
+        for (InterfaceInfoStatusEnum anEnum : InterfaceInfoStatusEnum.values()) {
             if (anEnum.value.equals(value)) {
                 return anEnum;
             }
@@ -53,7 +51,7 @@ public enum UserRoleEnum {
         return null;
     }
 
-    public String getValue() {
+    public Integer getValue() {
         return value;
     }
 

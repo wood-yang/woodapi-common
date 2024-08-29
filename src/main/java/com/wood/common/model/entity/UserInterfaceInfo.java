@@ -1,4 +1,4 @@
-package com.woodapi.model.entity;
+package com.wood.common.model.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
