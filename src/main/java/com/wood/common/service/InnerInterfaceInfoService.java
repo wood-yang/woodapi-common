@@ -4,5 +4,5 @@ import com.wood.common.model.entity.InterfaceInfo;
 
 public interface InnerInterfaceInfoService {
 
-    InterfaceInfo getInterfaceInfoByUriAndPath(String uri, String path);
+    InterfaceInfo getInterfaceInfoByUri(String uri);
 }
