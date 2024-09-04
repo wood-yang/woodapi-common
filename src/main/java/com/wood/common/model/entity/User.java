@@ -18,7 +18,6 @@ public class User implements Serializable {
     /**
      * id
      */
-    //    @TableId(type = IdType.ASSIGN_ID)
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
